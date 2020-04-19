@@ -3,6 +3,7 @@ package com.javabasics;
 import java.text.NumberFormat;
 import java.util.Arrays;
 import java.util.Date;
+import java.util.Scanner;
 
 public class Main {
 
@@ -72,14 +73,42 @@ public class Main {
         NumberFormat percent = NumberFormat.getPercentInstance();
         String result2 = percent.format(0.31);
 
+//      reading input from the user
+//        parsing byte value only
+//        Scanner scanner = new Scanner(System.in);
+//        System.out.print("Name: ");
+//        String name = scanner.nextLine().trim();
+//        System.out.println("you are " + name);
 
-
-        System.out.println(result2);
+//        System.out.println(result2);
 
 //        System.out.println(y);
 //        System.out.println(Arrays.toString(number));
 
 //        this is alike to console log in JS or print in python
 //        System.out.println(Arrays.deepToString(numbers));
+
+        // ********  mortgage calculator  ********
+        final byte MONTH_IN_YEAR = 12;
+        final byte PERCENT = 100;
+
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Principal: ");
+        int principal = scanner.nextInt();
+
+        System.out.print("Annual Interest Rate: ");
+        float annualInterest = scanner.nextFloat();
+        float monthlyInterest = annualInterest/PERCENT/MONTH_IN_YEAR;
+
+        System.out.print("Period (Year): ");
+        byte years = scanner.nextByte();
+        int numberOfPayments = years * MONTH_IN_YEAR;
+
+        double mortgage = principal
+                * (monthlyInterest * Math.pow(1 + monthlyInterest, numberOfPayments))
+                / (Math.pow(1+monthlyInterest, numberOfPayments) - 1);
+
+        String mortgageFormatted = NumberFormat.getCurrencyInstance().format(mortgage);
+        System.out.println("Mortgage: " + mortgageFormatted);
     }
 }
