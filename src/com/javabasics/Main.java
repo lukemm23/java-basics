@@ -88,12 +88,14 @@ public class Main {
 //        this is alike to console log in JS or print in python
 //        System.out.println(Arrays.deepToString(numbers));
 
+
+
         // ********  mortgage calculator  ********
         final byte MONTH_IN_YEAR = 12;
         final byte PERCENT = 100;
 
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Principal: ");
+        System.out.print("Principal ($1K - $1M): ");
         int principal = scanner.nextInt();
 
         System.out.print("Annual Interest Rate: ");
@@ -110,5 +112,104 @@ public class Main {
 
         String mortgageFormatted = NumberFormat.getCurrencyInstance().format(mortgage);
         System.out.println("Mortgage: " + mortgageFormatted);
+
+        // ********  mortgage calculator end ********
+
+        // if statements
+//        int temp = 10;
+//        if (temp > 30) {
+//            System.out.println("its a hot day!");
+//            System.out.println("drink plenty of water!");
+//        }else if (temp >20){
+//            System.out.println("its a beautiful day!");
+//            }else{
+//            System.out.println("its a cold day!");
+//        }
+
+//        simplified if statement
+//        int income = 120_000;
+//        boolean hasHighIncome = (income > 100_000);
+
+//        ternary operator in java:
+//            int income = 120_000;
+//            String className = income>100_000 ? "First" : "Economy";
+
+//        switch:case statements
+//        String role = "admin";
+//        if(role == "admin")
+//            System.out.println("you're an admin");
+//        else if (role == "moderator")
+//            System.out.println("you're a moderator");
+//        else
+//            System.out.println("you're a guest");
+
+//        String role;
+//        switch (role) {
+//            case "admin":
+//                System.out.println("you're an admin");
+//                break;
+//            case "moderator":
+//                System.out.println("you're a moderator");
+//                break;
+//            default:
+//                System.out.println("you're a guest");
+//        }
+
+//        ******** fizzBuzz ********
+//        Scanner scanner3 = new Scanner(System.in);
+//        System.out.print("Number: ");
+//        int number3 = scanner3.nextInt();
+//
+//        if(number3 % 5 == 0 && number3 % 3 == 0)
+//            System.out.println("fizzBuzz");
+//        else if (number3 % 3 == 0)
+//            System.out.println("Buzz");
+//        else if (number3 % 5 == 0)
+//            System.out.println("Fizz");
+//        else
+//            System.out.println(number3);
+
+//        in order to keep code dry, you might have a nested if solution
+//        however it is not recommended in this scenario because it leaves the code confusing
+//        ******** fizzBuzz End ********
+
+//            for loops
+//        for(int i = 0; i<5; i++)
+//            System.out.println("Hello World");
+
+//        while loops
+//        int i = 0;
+//        while(i>0){
+//            System.out.println("hello World");
+//            i--;
+//        }
+
+//        do-while loop
+//        executed atleast once even when condition is false
+//        can use "break" key word to exit out of while loops, always use it to exit to avoid infinite loops
+//        can use "continue" key word to continue the loop
+
+//    do {
+//        System.out.print("Input: ");
+//        input = scanner.next().toLowerCase();
+//        System.out.println(input);
+//    }while (!input.equals("quit"));
+
+//        for each loops
+
+//        String[] fruits = {"apple", "mango", "orange"};
+
+//        for(int i = 0; i<fruits.length; i++){
+//            System.out.println(fruits[i]);
+//        }
+
+//        for (String fruit : fruits)
+//            System.out.println(fruit);
+
+
+//        for each loops are forward reading only
+//            access item only but not index
+
+
     }
-}
+
